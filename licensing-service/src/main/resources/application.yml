@@ -1,41 +1,8 @@
 spring:
-  profiles:
-    active:
-      on-profile: dev
   datasource:
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
-#      jdbc- url: jdbc:mysql://localhost:3306/jojae?serverTimezone=UTC&characterEncoding=UTF-8
-#      jdbc- url: '{cipher}lE2vSpNUiPPVWGb/F3p1zvK9vWIE8s.....길어서 줄임......SOht20JJMP9sGtBXwntdux7mA='
-      jdbc-url: '{cipher}xxxxxxxxx-devurl-xxxxxxxxx'
-      username: '{cipher}xxxxxxxxx-devusername-xxxxxxxxx'
-      password: '{cipher}xxxxxxxxx-devuserpassword-xxxxxxxxx'
-      maximum-pool-size: 10
-
----
-
-spring:
-  profiles:
-    active:
-      on-profile: stage
-  datasource:
-    hikari:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: '{cipher}xxxxxxxxx-stageurl-xxxxxxxxx'
-      username: '{cipher}xxxxxxxxx-stageusername-xxxxxxxxx'
-      password: '{cipher}xxxxxxxxx-stageuserpassword-xxxxxxxxx'
-      maximum-pool-size: 10
-
----
-
-spring:
-  profiles:
-    active:
-      on-profile: prod
-  datasource:
-    hikari:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: '{cipher}xxxxxxxxx-produrl-xxxxxxxxx'
-      username: '{cipher}xxxxxxxxx-produsername-xxxxxxxxx'
-      password: '{cipher}xxxxxxxxx-produserpassword-xxxxxxxxx'
+      jdbc-url: ${JDBC_URL}
+      username: ${JDBC_USERNAME}
+      password: ${JDBC_PASSWORD}
       maximum-pool-size: 10

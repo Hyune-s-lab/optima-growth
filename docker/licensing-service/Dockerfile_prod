@@ -1,0 +1,9 @@
+FROM openjdk:17-jdk-slim-buster
+
+ENV JDBC_URL=jdbc:mysql://111.222.333.444:3306/gssg
+ENV JDBC_USERNAME=root
+ENV JDBC_PASSWORD=root
+
+ARG JAR_FILE=/licensing-service/build/libs/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
